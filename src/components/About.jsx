@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const About = () => {
+  const [copied, setCopied] = useState(false);
+  const caText = '0xc466c28d87b3d5cd34f3d5c088751532d71a38d93a8aae4551dd56272cfb4355::manifest::MANIFEST';
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(caText).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+    });
+  };
+
   return (
     <section className="about" id="about">
       <h2>About MANIFEST</h2>
@@ -12,10 +22,17 @@ const About = () => {
         </p>
       </div>
       <div className="movement">
-        <p>
-          $MANIFEST transcends the conventional meme coin, blossoming into a prestigious movement.
-          Each holding connects you to a global elite, united in manifesting abundance, vitality, and opulence.
-          Embrace this journey to steer your aspirations toward unparalleled success.
+        <p
+          onClick={handleCopy}
+          style={{
+            wordBreak: 'break-all', // Breaks long words on narrow screens
+            overflowWrap: 'break-word', // Handles overflow gracefully
+            cursor: 'pointer', // Indicates it's clickable
+            whiteSpace: 'normal', // Allows natural wrapping
+          }}
+        >
+          CA: {caText}
+          {copied && <span style={{ marginLeft: '10px', color: 'green' }}>Copied!</span>}
         </p>
       </div>
       <div className="social-links">
