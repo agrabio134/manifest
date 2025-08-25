@@ -919,12 +919,31 @@ nav a:hover {
 
   .nav-menu a,
   .nav-menu .nav-cart {
-    display: block;
-    padding: 15px;
+    display: flex;
+    justify-content: center;
+    /* padding: 15px; */
     font-size: 1.2rem;
     border-radius: 8px;
     transition: background-color 0.3s ease;
   }
+
+  .nav-menu li {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* this centers vertically */
+}
+
+.nav-menu a,
+.nav-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
 
   .nav-menu a:hover,
   .nav-menu .nav-cart:hover {
