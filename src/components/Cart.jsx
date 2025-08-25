@@ -4,7 +4,7 @@ import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
 import Swal from 'sweetalert2';
 
 const TOKEN_TYPE = '0xc466c28d87b3d5cd34f3d5c088751532d71a38d93a8aae4551dd56272cfb4355::manifest::MANIFEST';
-const DECIMALS = 9; // Assuming 9 decimals for the token
+const DECIMALS = 9;
 
 const Cart = ({ cart, removeFromCart, isCartOpen, toggleCart, tokenPrice }) => {
   const wallet = useWallet();
@@ -34,28 +34,24 @@ const Cart = ({ cart, removeFromCart, isCartOpen, toggleCart, tokenPrice }) => {
   const generateProgressImage = () => {
     const canvas = document.createElement('canvas');
     canvas.width = 600;
-    canvas.height = 600; // Increased height to accommodate cart items
+    canvas.height = 600;
     const ctx = canvas.getContext('2d');
 
-    // Gradient Background
     const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
     gradient.addColorStop(0, '#1a1a1a');
     gradient.addColorStop(1, '#000000');
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Border Glow
     ctx.strokeStyle = 'rgba(255, 0, 0, 0.5)';
     ctx.lineWidth = 8;
     ctx.strokeRect(4, 4, canvas.width - 8, canvas.height - 8);
 
-    // Title
     ctx.fillStyle = '#ffffff';
     ctx.font = 'bold 36px "Porsche Next"';
     ctx.textAlign = 'center';
     ctx.fillText('Your Dream Progress', canvas.width / 2, 50);
 
-    // Cart Items (up to 5)
     ctx.fillStyle = '#cccccc';
     ctx.font = '18px Inter';
     ctx.textAlign = 'left';
@@ -70,42 +66,34 @@ const Cart = ({ cart, removeFromCart, isCartOpen, toggleCart, tokenPrice }) => {
       ctx.fillText(`...and ${cart.length - 5} more`, 50, 130 + maxItems * 30);
     }
 
-    // Total Cart Value
     ctx.fillStyle = '#ffffff';
     ctx.font = '24px Inter';
     ctx.textAlign = 'center';
     ctx.fillText(`Cart Total: $${total.toLocaleString()}`, canvas.width / 2, 300);
 
-    // Wallet Balance
     ctx.fillText(`Balance: ${balance.toLocaleString()} $MANIFEST (~$${usdBalance.toLocaleString()})`, canvas.width / 2, 340);
 
-    // Progress Percentage
     ctx.font = 'bold 32px Inter';
     ctx.fillStyle = '#ff0000';
     ctx.fillText(`Progress: ${progress.toFixed(2)}%`, canvas.width / 2, 390);
 
-    // Progress Bar Background
     ctx.fillStyle = '#333333';
     ctx.fillRect(50, 420, 500, 30);
 
-    // Progress Bar Fill
     ctx.fillStyle = '#ff0000';
     ctx.fillRect(50, 420, (500 * progress) / 100, 30);
 
-    // Wallet Address
     ctx.fillStyle = '#cccccc';
     ctx.font = '16px Inter';
     ctx.textAlign = 'left';
     const walletText = wallet.connected ? `Wallet: ${wallet.address.slice(0, 6)}...${wallet.address.slice(-4)}` : 'Wallet: Not Connected';
     ctx.fillText(walletText, 50, 480);
 
-    // Footer with Watermark
     ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
     ctx.font = 'italic 14px Inter';
     ctx.textAlign = 'center';
     ctx.fillText('Manifest Your Dreams with $MANIFEST', canvas.width / 2, 550);
 
-    // Show Modal with Preview
     Swal.fire({
       title: 'Your Progress Image',
       html: `

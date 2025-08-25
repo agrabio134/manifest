@@ -1,7 +1,7 @@
-// App.jsx
 import { useState, useEffect } from 'react';
 import { WalletProvider } from '@suiet/wallet-kit';
 import '@suiet/wallet-kit/style.css';
+import Swal from 'sweetalert2';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import About from './components/About';
@@ -13,9 +13,9 @@ import Footer from './components/Footer';
 function AppContent() {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem('manifestCart')) || []);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isNavOpen, setIsNavOpen] = useState(false); // Add state for nav
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [tokenPrice, setTokenPrice] = useState(0);
-  const [hideHamburger, setHideHamburger] = useState(false); // State for hiding hamburger
+  const [hideHamburger, setHideHamburger] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   // Fetch token price
@@ -39,10 +39,8 @@ function AppContent() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down
         setHideHamburger(true);
       } else {
-        // Scrolling up or at top
         setHideHamburger(false);
       }
       setLastScrollY(currentScrollY);
@@ -52,17 +50,28 @@ function AppContent() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const addToCart = (itemName, itemPrice, itemDescription = '', itemImage = '') => {
+  const addToCart = (itemName, itemPrice, itemDescription = '', itemImage = '', shouldOpenCart = false) => {
+    console.log('addToCart called with:', { itemName, itemPrice, itemDescription, itemImage, shouldOpenCart });
     const newCart = [...cart, { name: itemName, price: itemPrice, description: itemDescription, image: itemImage }];
     setCart(newCart);
     localStorage.setItem('manifestCart', JSON.stringify(newCart));
-    window.Swal.fire({
+    Swal.fire({
       icon: 'success',
       title: 'Added to Manifest Cart!',
       text: `${itemName} has been added.`,
       showConfirmButton: false,
       timer: 1500,
     });
+    if (shouldOpenCart) {
+      setTimeout(() => {
+        console.log('Opening cart, setting isCartOpen to true');
+        setIsCartOpen(true);
+        if (isNavOpen) {
+          console.log('Closing nav, setting isNavOpen to false');
+          setIsNavOpen(false);
+        }
+      }, 100);
+    }
   };
 
   const removeFromCart = (index) => {
@@ -70,7 +79,7 @@ function AppContent() {
     newCart.splice(index, 1);
     setCart(newCart);
     localStorage.setItem('manifestCart', JSON.stringify(newCart));
-    window.Swal.fire({
+    Swal.fire({
       icon: 'info',
       title: 'Removed from Cart!',
       text: 'Item has been removed.',
@@ -80,13 +89,14 @@ function AppContent() {
   };
 
   const toggleCart = () => {
+    console.log('Toggling cart, current isCartOpen:', isCartOpen);
     setIsCartOpen(!isCartOpen);
-    if (isNavOpen) setIsNavOpen(false); // Close nav when cart opens
+    if (isNavOpen) setIsNavOpen(false);
   };
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
-    if (isCartOpen) setIsCartOpen(false); // Close cart when nav opens
+    if (isCartOpen) setIsCartOpen(false);
   };
 
   return (

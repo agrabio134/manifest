@@ -437,7 +437,7 @@ const Categories = ({ addToCart }) => {
                             className="add-to-cart"
                             onClick={(e) => {
                               e.preventDefault();
-                              addToCart(item.name, item.price, item.description, item.image);
+                              addToCart(item.name, item.price, item.description, item.image, true);
                             }}
                             aria-label={`Add ${item.name} to cart`}
                           >
@@ -465,7 +465,7 @@ const Categories = ({ addToCart }) => {
                       className="add-to-cart"
                       onClick={(e) => {
                         e.preventDefault();
-                        addToCart(item.name, item.price, item.description, item.image);
+                        addToCart(item.name, item.price, item.description, item.image, true);
                       }}
                       aria-label={`Add ${item.name} to cart`}
                     >
@@ -534,7 +534,7 @@ const Categories = ({ addToCart }) => {
                                 className="add-to-cart"
                                 onClick={(e) => {
                                   e.preventDefault();
-                                  addToCart(dream.name, dream.price, dream.description, dream.image);
+                                  addToCart(dream.name, dream.price, item.description, item.image, true);
                                 }}
                                 aria-label={`Add ${dream.name} to cart`}
                               >
