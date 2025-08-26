@@ -529,16 +529,16 @@ const Categories = ({ addToCart }) => {
                             <p className="description">{dream.description}</p>
                             <p className="price">${dream.price.toLocaleString()}</p>
                             <div className="dream-actions">
-                              <a
-                                href="#"
-                                className="add-to-cart"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  addToCart(dream.name, dream.price, item.description, item.image, true);
-                                }}
-                                aria-label={`Add ${dream.name} to cart`}
-                              >
-                                Add to Cart
+                          <a
+                            href="#"
+                            className="add-to-cart"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              addToCart(dream.name, dream.price, dream.description, dream.image, true);
+                            }}
+                            aria-label={`Add ${dream.name} to cart`}
+                          >
+                                Add to Manifest Cart
                               </a>
                               <button
                                 className="remove-dream"
