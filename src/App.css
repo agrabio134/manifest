@@ -163,7 +163,7 @@ nav a:hover {
 .wkit-button,
 .wkit-button--primary,
 .wkit-button--connected {
-  background-color: #ff0000 !important;
+  background-color: #e1e1e1 !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: 8px !important;
@@ -173,20 +173,20 @@ nav a:hover {
   text-transform: uppercase !important;
   letter-spacing: 1.2px !important;
   transition: all 0.3s ease !important;
-  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(160, 160, 160, 0.3) !important;
 }
 
 .wkit-button:hover,
 .wkit-button--primary:hover,
 .wkit-button--connected:hover {
-  background-color: #cc0000 !important;
+  background-color: #b5b5b5 !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(150, 150, 150, 0.4) !important;
 }
 
 .wkit-connected-button__balance,
 .wkit-address-select {
-  color: #ffffff !important;
+  color: #161616 !important;
 }
 
 .wkit-connected-container {
@@ -203,8 +203,8 @@ nav a:hover {
 }
 
 .connect-btn {
-  background-color: #ff0000;
-  color: #ffffff;
+  background-color: #e1e1e1;
+  color: #161616;
   border: none;
   border-radius: 8px;
   padding: 12px 24px;
@@ -213,13 +213,13 @@ nav a:hover {
   text-transform: uppercase;
   letter-spacing: 1.2px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(218, 218, 218, 0.3);
 }
 
 .connect-btn:hover {
-  background-color: #cc0000;
+  background-color: #eaeaea;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
 .progress-modal {
@@ -230,7 +230,7 @@ nav a:hover {
 }
 
 .modal-download-btn {
-  background-color: #ff0000 !important;
+  background-color: #e1e1e1 !important;
   color: #ffffff !important;
   border: none !important;
   border-radius: 8px !important;
@@ -243,7 +243,7 @@ nav a:hover {
 }
 
 .modal-download-btn:hover {
-  background-color: #cc0000 !important;
+  background-color: #d3d3d3 !important;
   transform: translateY(-2px) !important;
 }
 
@@ -425,7 +425,7 @@ nav a:hover {
 
 .brand-logo-large {
   width: 140px;
-  height: auto;
+  height: 90px; 
   object-fit: contain;
 }
 
@@ -647,7 +647,7 @@ nav a:hover {
 
 .progress-fill {
   height: 100%;
-  background-color: #ff0000;
+  background-color: #e1e1e1;
   transition: width 0.3s ease;
 }
 
@@ -662,7 +662,7 @@ nav a:hover {
   display: inline-block;
   margin-top: 20px;
   padding: 14px 28px;
-  background-color: #ff0000;
+  background-color: #e1e1e1;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -673,13 +673,13 @@ nav a:hover {
   width: 100%;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(176, 176, 176, 0.3);
 }
 
 .generate-progress-btn:hover {
-  background-color: #cc0000;
+  background-color: #989898;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+  box-shadow: 0 6px 20px rgba(105, 105, 105, 0.4);
 }
 
 .checkout-btn {
@@ -838,7 +838,7 @@ nav a:hover {
 .connect-wallet-text {
   text-align: center;
   margin-top: 20px;
-  color: #ff0000;
+  color: #e1e1e1;
   font-weight: 500;
 }
 
@@ -1160,11 +1160,11 @@ nav a:hover {
   }
 
   .footer {
-    padding: 40px 20px;
+    padding: 20px 10px;
   }
 
   .footer p {
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
 
   .swal2-popup {
