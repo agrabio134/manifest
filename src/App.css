@@ -891,7 +891,7 @@ nav a:hover::after {
 @media (max-width: 768px) {
   .video-background {
     height: 120vh;
-    margin: 0;
+    margin-top: -80px;
   }
   .header {
     padding: 100px 20px 60px;
