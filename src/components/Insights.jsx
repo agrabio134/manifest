@@ -3,34 +3,34 @@ import React from 'react';
 const Insights = () => {
   const insights = [
     {
-      title: 'The Art of Manifesting',
-      description: 'With $MANIFEST, master the art of manifesting a 69 billion market cap to surpass @porsche, crafting a legacy of luxury.',
+      title: 'Movement with Soul',
+      description: 'MANIFEST is the first movement coin with a soul mission to $69B.',
     },
     {
-      title: 'Vision of Triumph',
-      description: 'Our $MANIFEST vision propels us to flip @porsche, uniting a community in pursuit of extraordinary success.',
+      title: 'Ritual Coin',
+      description: 'MANIFEST is a ritual coin every buyback, every post, every holder is part of the ritual.',
     },
     {
-      title: 'Manifesting Prosperity',
-      description: 'Each $MANIFEST holding ignites prosperity, health, and abundance, empowering your journey to greatness.',
+      title: 'Treasury Strategy',
+      description: 'MANIFEST is the world\'s first movement coin with a treasury strategy. Structure + culture.',
     },
     {
-      title: 'The Manifest Odyssey',
-      description: 'Embark on a transformative odyssey with $MANIFEST, where every dream is forged through collective strength.',
+      title: 'Belief Into Action',
+      description: 'MANIFEST is belief turned into action, and action scaled into freedom.',
     },
     {
-      title: 'Elevated Living',
-      description: '$MANIFEST elevates your existence, manifesting cars, homes, and experiences that embody ultimate prestige.',
+      title: 'Cultural Flywheel',
+      description: 'MANIFEST is a cultural flywheel, designed to compound belief into $69B.',
     },
     {
-      title: 'Unity in Manifestation',
-      description: 'The $MANIFEST community is the heartbeat of this movement, driving toward a future of unmatched splendor.',
+      title: 'Mirror of Belief',
+      description: 'MANIFEST is a mirror. It\'s the belief you have in yourself, reflected on-chain.',
     },
   ];
 
   return (
     <section className="insights" id="insights">
-      <h2>Manifest Insights</h2>
+      <h2>What is MANIFEST?</h2>
       <div className="insight-grid">
         {insights.map((insight, index) => (
           <div key={index} className="insight-card fade-in">

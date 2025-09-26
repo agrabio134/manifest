@@ -101,8 +101,7 @@ function AppContent() {
 
   return (
     <>
-      <div className="video-background"></div>
-      <Nav toggleCart={toggleCart} isNavOpen={isNavOpen} toggleNav={toggleNav} hideHamburger={hideHamburger} />
+  <Nav toggleCart={toggleCart} isNavOpen={isNavOpen} toggleNav={toggleNav} hideHamburger={hideHamburger} />
       <Header />
       <About />
       <Categories addToCart={addToCart} />
